@@ -3,10 +3,10 @@
 	package="${APP_PACKAGE}"
 	android:versionCode="1"
 	android:versionName="1.0">
-	<uses-sdk android:minSdkVersion="7" />
+
 	<application android:label="${APP_LABEL}" android:icon="@drawable/icon">
 		<activity 
-			android:name=".MonkeyGame" 
+			android:name="MonkeyGame" 
 			android:label="${APP_LABEL}"
 			android:screenOrientation="${SCREEN_ORIENTATION}"
 			android:configChanges="keyboardHidden|orientation"
