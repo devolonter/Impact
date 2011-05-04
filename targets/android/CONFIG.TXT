@@ -3,7 +3,7 @@
 APP_LABEL=Impact
 
 'Java package to create - must be valid java package identifier and must be UNIQUE per app, eg: com.mybizid.mygameid
-APP_PACKAGE=com.intermediaware.games.impact
+APP_PACKAGE=com.intermediaware.impact
 
 'Must be one of: user, portrait, landscape, behind, sensor, nosensor, unspecified - experiment!
 SCREEN_ORIENTATION=landscape
