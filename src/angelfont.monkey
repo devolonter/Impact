@@ -73,15 +73,13 @@ Class AngelFont
 			error += data.Length+","	'+"-"+line
 			If data.Length > 0
 				If data.Length = 3
-	'				kerning.Insert(data[0]+"_"+data[1], New Kerning(Int(data[0]), Int(data[1]), Int(data[2]))
-					kernPairs.Insert(String.FromChar(Int(data[0]))+"_"+String.FromChar(Int(data[1])), New KernPair(Int(data[0]), Int(data[1]), Int(data[2])))
+					kernPairs.Insert(String.FromChar(Int(data[0]))+"_"+String.FromChar(Int(data[1].Trim())), New KernPair(Int(data[0].Trim()), Int(data[1].Trim()), Int(data[2].Trim())))
 				Else
 					If data.Length >= 8
 						chars[Int(data[0])] = New Char(Int(data[1]), Int(data[2]), Int(data[3]), Int(data[4]),  Int(data[5]),  Int(data[6]),  Int(data[7]))
 						Local ch := chars[Int(data[0])]
 						If ch.height > Self.height Self.height = ch.height
 						If ch.yOffset < Self.heightOffset Self.heightOffset = ch.yOffset
-		'				ch.asc = Int(data[0])
 					Endif
 				Endif
 			Endif
@@ -273,6 +271,7 @@ Class AngelFont
 	End
 
 End Class
+
 
 
 

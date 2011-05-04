@@ -61,6 +61,9 @@ Class Application Extends App
 				End
 			End
 		End
+		#If TARGET="android"
+			If(KeyHit(KEY_ESCAPE)) Error ""
+		#EndIf
 		Return 0
 	End
 	
@@ -147,4 +150,5 @@ Class Application Extends App
 		Next
 	End
 End
+
 

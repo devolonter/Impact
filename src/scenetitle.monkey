@@ -29,19 +29,16 @@ Class SceneTitle Extends Scene
 	
 	Method OnRender:Void()
 		DrawImage(titlepic, 0, 0)
-		'If (Millisecs() / 1000 Mod 2 = 0) Then GameFonts.normal.DrawText(TEXT_START, 66, 227)
-		If (Millisecs() / 1000 Mod 2 = 0) Then DrawText(TEXT_START, 66, 227)
+		If (Millisecs() / 1000 Mod 2 = 0) Then GameFonts.normal.DrawText(TEXT_START, 66, 227)
 		PushMatrix
 			Scale(0.6, 0.6)
-			'GameFonts.normal.DrawText("Code by @joemanaco      GFX by @Emme73", 100, 450)
-			DrawText("Code by @joemanaco      GFX by @Emme73", 100, 450)
+			GameFonts.normal.DrawText("Code by @joemanaco      GFX by @Emme73", 100, 450)
 		PopMatrix
 		
 		
 		PushMatrix
 			Scale(0.5, 0.5)
-			'GameFonts.normal.DrawText("More free games?", 480, 60, True)
-			DrawText("More free games?", 480, 60, .5)
+			GameFonts.normal.DrawText("More free games?", 480, 60, True)
 		PopMatrix
 	End
 	
@@ -52,4 +49,5 @@ Class SceneTitle Extends Scene
 	Method OnLeave:Void()
 	End
 End
+
 

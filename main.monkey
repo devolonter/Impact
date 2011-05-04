@@ -17,7 +17,7 @@ Function Main:Int()
 	app.AddFader(New FaderBrightness)
 	
 	SoundManager.LoadSounds()
-	'GameFonts.Load()
+	GameFonts.Load()
 	
 	app.AddScene("logo", New SceneLogo)
 	app.AddScene("title", New SceneTitle)

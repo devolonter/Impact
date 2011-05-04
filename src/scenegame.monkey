@@ -79,8 +79,7 @@ Class SceneGame Extends Scene
 			Case LEVEL_COMPLETE
 				RenderStateMessage("GET READY", True)
 				Local t:String = "Stage cleared!"
-				'GameFonts.normal.DrawText(t, Application.WIDTH / 2 - GameFonts.normal.TextWidth(t) / 2, 135)
-				DrawText(t, Application.WIDTH / 2 - TextWidth(t) / 2, 135)
+				GameFonts.normal.DrawText(t, Application.WIDTH / 2 - GameFonts.normal.TextWidth(t) / 2, 135)
 
 			Case GET_READY
 				RenderStateMessage("GET READY", True)
@@ -88,8 +87,7 @@ Class SceneGame Extends Scene
 			Case GAME_OVER
 				RenderStateMessage("Your Score: " + GetScore(), True)
 				Local t:String = "G A M E     O V E R"
-				'GameFonts.normal.DrawText(t, Application.WIDTH / 2 - GameFonts.normal.TextWidth(t) / 2, 135)
-				DrawText(t, Application.WIDTH / 2 - TextWidth(t) / 2, 135)
+				GameFonts.normal.DrawText(t, Application.WIDTH / 2 - GameFonts.normal.TextWidth(t) / 2, 135)
 		End
 		
 		RenderScore()
@@ -101,9 +99,8 @@ Class SceneGame Extends Scene
 		DrawRect(0, 0, Application.WIDTH, Application.HEIGHT)
 		SetAlpha(1)
 		SetColor(255,255,255)				
-		'Local f:AngelFont = GameFonts.normal
-		'If (Not blink Or Millisecs() / 1000 Mod 2 = 0) Then f.DrawText(t, Application.WIDTH / 2 - f.TextWidth(t) / 2, 175)
-		If (Not blink Or Millisecs() / 1000 Mod 2 = 0) Then DrawText(t, Application.WIDTH / 2 - TextWidth(t) / 2, 175)
+		Local f:AngelFont = GameFonts.normal
+		If (Not blink Or Millisecs() / 1000 Mod 2 = 0) Then f.DrawText(t, Application.WIDTH / 2 - f.TextWidth(t) / 2, 175)
 	End Method
 	
 	Method GetScore:String()
@@ -116,10 +113,8 @@ Class SceneGame Extends Scene
 	End
 	
 	Method RenderScore:Void()
-		'GameFonts.normal.DrawText(GetScore(), 10, 10)
-		'GameFonts.normal.DrawText((level+1), Application.WIDTH - GameFonts.normal.TextWidth(level) - 15, 10)
-		DrawText(GetScore(), 10, 10)
-		DrawText((level+1), Application.WIDTH - TextWidth(level) - 15, 10)
+		GameFonts.normal.DrawText(GetScore(), 10, 10)
+		GameFonts.normal.DrawText((level+1), Application.WIDTH - GameFonts.normal.TextWidth(level) - 15, 10)
 		
 		For Local i:Int = 1 To Bullet.bullets - Bullet.bulletsInUse
 			DrawImage(Bullet.img, Application.WIDTH - 16 * i, Application.HEIGHT - 16)
@@ -239,5 +234,6 @@ Class SceneGame Extends Scene
 		End
 	End		
 End
+
 
 
