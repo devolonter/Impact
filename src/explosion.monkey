@@ -62,3 +62,4 @@ Class Explosion Extends GameObject
 		frame = 63
 	End
 End
+
