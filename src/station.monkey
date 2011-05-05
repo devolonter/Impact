@@ -13,8 +13,8 @@ Class Station Extends GameObject
 	
 	Function Init:Void()
 		If (img[0] = Null)
-			img[0] = LoadImage("gfx/station.png")
-			img[1] = LoadImage("gfx/station2.png")
+			img[0] = LoadImage("gfx/station.png", 1, Image.XPadding)
+			img[1] = LoadImage("gfx/station2.png", 1, Image.XPadding)
 			collisionRadius = img[0].Width() * 0.7
 		End If
 	End
@@ -43,3 +43,4 @@ Class Station Extends GameObject
 		destroyed = True
 	End
 End
+

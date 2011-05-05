@@ -9,7 +9,7 @@ Class Base Extends GameObject
 	Global img:Image
 	
 	Function Init:Void()
-		If (img = Null) Then img = LoadImage("gfx/base.png")
+		If (img = Null) Then img = LoadImage("gfx/base.png", 1, Image.XPadding)
 	End
 	
 	Function Create:Base()
