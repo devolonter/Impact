@@ -7,6 +7,10 @@ Import monkey
 Import scene
 Import fader
 
+#If TARGET="android"
+	Import monkeytools.MonkeyToolsNative
+#EndIf
+
 Class Application Extends App
 
 	Global application:Application
@@ -62,7 +66,7 @@ Class Application Extends App
 			End
 		End
 		#If TARGET="android"
-			If(KeyHit(KEY_ESCAPE)) Error ""
+			If(KeyHit(KEY_ESCAPE)) ExitApp()
 		#EndIf
 		Return 0
 	End
@@ -150,5 +154,6 @@ Class Application Extends App
 		Next
 	End
 End
+
 
 
