@@ -7,8 +7,6 @@ Import monkey
 Import scene
 Import fader
 
-Import explosion
-
 Class Application Extends App
 
 	Global application:Application
