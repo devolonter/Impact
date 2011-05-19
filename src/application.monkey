@@ -7,6 +7,8 @@ Import monkey
 Import scene
 Import fader
 
+Import explosion
+
 Class Application Extends App
 
 	Global application:Application
@@ -61,9 +63,6 @@ Class Application Extends App
 				End
 			End
 		End
-		#If TARGET="android"
-			If(KeyHit(KEY_ESCAPE)) Error ""
-		#EndIf
 		Return 0
 	End
 	
@@ -108,11 +107,13 @@ Class Application Extends App
 		Return 0
 	End Method
 
-	Method OnResume:Int()
+	Method OnResume:Int()		
+		If (currentScene) Then currentScene.OnResume()
 		Return 0
 	End Method
 	
 	Method OnSuspend:Int()
+		If (currentScene) Then currentScene.OnSuspend()
 		Return 0
 	End Method
 
@@ -150,7 +151,3 @@ Class Application Extends App
 		Next
 	End
 End
-
-
-
-

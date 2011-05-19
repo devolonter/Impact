@@ -68,7 +68,13 @@ Class SceneGame Extends Scene
 				If (timer > 30 And MouseHit(MOUSE_LEFT)) 
 					Application.GetInstance().SetNextScene("title")
 				End								
-		End		
+		End	
+		
+		If(KeyHit(KEY_ESCAPE)) Then
+			ClearLevel()
+			timer = 0
+			Application.GetInstance().SetNextScene("title")
+		End	
 	End
 	
 	Method OnRender:Void()
@@ -169,7 +175,10 @@ Class SceneGame Extends Scene
 		Station.Create(11, 255, 0)
 		Station.Create(235,248, 1)
 		Station.Create(331,248, 1)
-		Station.Create(416,248, 1)		
+		Station.Create(416,248, 1)	
+		
+		Explosion.Create(-100,100)	
+		Explosion.Create(-100,-100,1)		
 	End
 	
 	Method OnLeave:Void()
@@ -232,7 +241,13 @@ Class SceneGame Extends Scene
 			state = GAME_OVER
 			timer = 0
 		End
-	End		
+	End
+	
+	Method OnSuspend:Void()
+		Explosion.Create(-100,100)	
+		Explosion.Create(-100,-100,1)			
+	End Method
+			
 End
 
 

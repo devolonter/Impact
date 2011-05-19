@@ -24,7 +24,7 @@ Class Asteroid Extends GameObject
 	Function Init:Void()
 		If (img = Null)
 			img = LoadImage("gfx/asteroids.png")
-			img = img.GrabImage(0, 0, 32, 32, FRAMES, Image.MidHandle|Image.XPadding)
+			img = img.GrabImage(0, 0, 32, 32, FRAMES, Image.MidHandle|Image.XYPadding)
 			collisionRadius = img.Width() / 2 * 0.7
 		End
 	End
@@ -87,6 +87,7 @@ Class Asteroid Extends GameObject
 	Method New()
 	End	
 End
+
 
 
 
