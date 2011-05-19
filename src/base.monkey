@@ -4,6 +4,7 @@ Import mojo
 Import bullet
 Import gameobject
 Import application
+Import input
 
 Class Base Extends GameObject
 	Global img:Image
@@ -22,8 +23,8 @@ Class Base Extends GameObject
 	
 	Method OnUpdate:Void()
 		If (MouseHit(MOUSE_LEFT))
-			Local x:Int = MouseX() / Application.GetInstance().zoomFactorX			
-			Local y:Int = MouseY() / Application.GetInstance().zoomFactorY
+			Local x:Int = VirtualMouseX()			
+			Local y:Int = VirtualMouseY()
 			Bullet.Create(x,y)
 		End
 	End
@@ -39,3 +40,4 @@ Class Base Extends GameObject
 		y = 249
 	End
 End
+

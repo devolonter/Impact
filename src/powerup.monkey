@@ -7,6 +7,7 @@ Import collision
 Import bullet
 Import application
 Import scenegame
+Import input
 
 Class PowerUp Extends GameObject
 	Global img:Image
@@ -52,8 +53,8 @@ Class PowerUp Extends GameObject
 	Method OnUpdate:Void()		
 		If IsDestroyed() Then Return
 		If (MouseDown(MOUSE_LEFT))
-			Local mx:Int = MouseX()	/ Application.GetInstance().zoomFactorX		
-			Local my:Int = MouseY() / Application.GetInstance().zoomFactorY	
+			Local mx:Int = VirtualMouseX()	
+			Local my:Int = VirtualMouseY()	
 			If (Collision.IntersectCircle(mx, my, 16, x, y, 16))
 				Bullet.PowerUp()
 				Local s:SceneGame = SceneGame(Application.GetInstance().currentScene)

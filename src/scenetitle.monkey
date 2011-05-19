@@ -7,6 +7,7 @@ Import scene
 Import application
 Import gamefonts
 Import horizon.util
+Import input
 
 Class SceneTitle Extends Scene
 	#if TARGET="android" Or TARGET="ios"
@@ -19,12 +20,14 @@ Class SceneTitle Extends Scene
 	
 	Method OnUpdate:Void()
 		If MouseHit(MOUSE_LEFT)
-			If (MouseY() < 60) 
+			If (VirtualMouseY() < 60) 
 				Util.NavigateToUrl("http://www.intermediaware.com")
 			Else
 				Application.GetInstance().SetNextScene("game")
 			End If
 		End If
+		
+		If(KeyHit(KEY_ESCAPE)) Error ""
 	End
 	
 	Method OnRender:Void()
@@ -49,5 +52,6 @@ Class SceneTitle Extends Scene
 	Method OnLeave:Void()
 	End
 End
+
 
 
