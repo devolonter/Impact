@@ -16,46 +16,39 @@ Class SceneLogo Extends Scene
 	Method OnUpdate:Void()
 		If (timer = 0)
 			timer = Millisecs() + 3000
-			SoundManager.PlayMusic()
+			PlayMusic(SoundManager.BACKGROUND_MUSIC)
 			
 			'Preload heavyweight resources to avoid freezes before explosion
 			Explosion.Create(0,0)	
 			Explosion.Create(0,0,1)	
 		End
-		
-		#If TARGET="android"			
-			If(timer - Millisecs() < 2000) GameObject.UpdateAll()
-		#EndIf
+					
+		If(timer - Millisecs() < 2000) GameObject.UpdateAll()
 		
 		If (timer < Millisecs()) Then Application.GetInstance().SetNextScene("title")
 	End
 	
 	Method OnRender:Void()	
-		#If TARGET="android"
-			'run preload after first second
-			If(timer - Millisecs() < 2000) GameObject.RenderAll()
-		#EndIf
+		'run preload after first second
+		If(timer - Millisecs() < 2000) GameObject.RenderAll()
 		
 		DrawImage(logo, 0, 0)	
 	End
 	
 	Method OnEnter:Void()
 		logo = LoadImage("gfx/logo.png")
-		
-		#If TARGET="android"			
-			GameObject.list = New List<GameObject>
-			Explosion.Init()						
-		#EndIf
+					
+		GameObject.list = New List<GameObject>
+		Explosion.Init()						
 	End
 	
 	Method OnLeave:Void()
-		logo = Null
-		
-		#If TARGET="android"
-			GameObject.list.Clear()
-		#EndIf
+		logo = Null		
+		GameObject.list.Clear()
 	End
 End
+
+
 
 
 

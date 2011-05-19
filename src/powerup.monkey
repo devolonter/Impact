@@ -52,8 +52,8 @@ Class PowerUp Extends GameObject
 	Method OnUpdate:Void()		
 		If IsDestroyed() Then Return
 		If (MouseDown(MOUSE_LEFT))
-			Local mx:Int = MouseX()			
-			Local my:Int = MouseY()
+			Local mx:Int = MouseX()	/ Application.GetInstance().zoomFactorX		
+			Local my:Int = MouseY() / Application.GetInstance().zoomFactorY	
 			If (Collision.IntersectCircle(mx, my, 16, x, y, 16))
 				Bullet.PowerUp()
 				Local s:SceneGame = SceneGame(Application.GetInstance().currentScene)
@@ -82,4 +82,5 @@ Class PowerUp Extends GameObject
 		Return destroyed
 	End	
 End
+
 
