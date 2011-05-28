@@ -16,7 +16,7 @@ Class PowerUp Extends GameObject
 
 	Const MAX_GRAVITATION:Int = 4	
 	Const FRAMES:Int = 32
-	Const ANIMATION_SPEED:Int = 0.5
+	Const ANIMATION_SPEED:Float = 0.5
 	
 	Field frame:Float
 	Field dx:Float, dy:Float
@@ -68,10 +68,10 @@ Class PowerUp Extends GameObject
 				Destroy()
 				Return
 			End If
-		End
+		End If
 
 		frame += ANIMATION_SPEED
-		If (frame >= FRAMES) Then frame -= FRAMES
+		If (frame >= FRAMES) Then frame = 0
 		
 		x += dx
 		y += dy
