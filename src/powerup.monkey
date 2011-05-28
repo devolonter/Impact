@@ -23,8 +23,7 @@ Class PowerUp Extends GameObject
 
 	Function Init:Void()
 		If (img = Null)
-			img = LoadImage("gfx/powerup1.png")
-			img = img.GrabImage(0, 0, 16, 16, FRAMES, Image.MidHandle)		
+			img = LoadImage("gfx/powerup1.png", 16, 16, FRAMES, Image.MidHandle)
 		End
 	End
 	

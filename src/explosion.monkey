@@ -14,10 +14,8 @@ Class Explosion Extends GameObject
 	
 	Function Init:Void()
 		If (img[0] = Null Or img[1] = Null)
-			img[0] = LoadImage("gfx/explosion3.png")
-			img[0] = img[0].GrabImage(0, 0, 128, 128, 64, Image.MidHandle)
-			img[1] = LoadImage("gfx/mushroom.png")
-			img[1] = img[1].GrabImage(0, 0, 128, 128, 64, Image.MidHandle)
+			img[0] = LoadImage("gfx/explosion3.png", 128, 128, 64, Image.MidHandle)
+			img[1] = LoadImage("gfx/mushroom.png", 128, 128, 64, Image.MidHandle)
 			collisionRadius = img[0].Width() * 0.25			
 		End			
 	End
