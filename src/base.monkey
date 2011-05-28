@@ -13,6 +13,13 @@ Class Base Extends GameObject
 		If (img = Null) Then img = LoadImage("gfx/base.png", 1, Image.XPadding)
 	End
 	
+	Function Discard:Void()
+		if (img <> null) Then
+			img.Discard()
+			img = null
+		End
+	End Function
+	
 	Function Create:Base()
 		Return New Base
 	End Function

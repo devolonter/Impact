@@ -16,17 +16,23 @@ Class PowerUp Extends GameObject
 
 	Const MAX_GRAVITATION:Int = 4	
 	Const FRAMES:Int = 32
-	Const ANIMATION_SPEED:Int = 0.5
+	Const ANIMATION_SPEED:Float = 0.5
 	
 	Field frame:Float
 	Field dx:Float, dy:Float
 
 	Function Init:Void()
 		If (img = Null)
-			img = LoadImage("gfx/powerup1.png")
-			img = img.GrabImage(0, 0, 16, 16, FRAMES, Image.MidHandle)		
+			img = LoadImage("gfx/powerup1.png", 16, 16, FRAMES, Image.MidHandle)
 		End
 	End
+	
+	Function Discard:Void()
+		if (img <> null) Then
+			img.Discard()
+			img = null
+		End
+	End Function
 	
 	Function Create:PowerUp(x:Float, y:Float, dx:Float, dy:Float)
 		Local p:PowerUp
@@ -62,10 +68,10 @@ Class PowerUp Extends GameObject
 				Destroy()
 				Return
 			End If
-		End
+		End If
 
 		frame += ANIMATION_SPEED
-		If (frame >= FRAMES) Then frame -= FRAMES
+		If (frame >= FRAMES) Then frame = 0
 		
 		x += dx
 		y += dy

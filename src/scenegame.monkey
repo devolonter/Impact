@@ -183,8 +183,14 @@ Class SceneGame Extends Scene
 	
 	Method OnLeave:Void()
 		GameObject.list.Clear()
-		background[0] = Null
-		background[1] = Null
+		Base.Discard()
+		Station.Discard()
+		Bullet.Discard()
+		PowerUp.Discard()
+		if(background[0] <> null) background[0].Discard()
+		if(background[1] <> null) background[1].Discard()
+		background[0] = null
+		background[1] = null
 	End
 
 	Method CheckCollision:Void()
@@ -249,6 +255,7 @@ Class SceneGame Extends Scene
 	End Method
 			
 End
+
 
 
 

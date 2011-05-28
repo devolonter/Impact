@@ -37,6 +37,13 @@ Class Bullet Extends GameObject
 		bulletsInUse = 0
 	End
 	
+	Function Discard:Void()
+		if (img <> null) Then
+			img.Discard()
+			img = null
+		End
+	End Function
+	
 	Method IsDestroyed:Bool()
 		Return (state = DESTROYED)
 	End

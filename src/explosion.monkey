@@ -7,20 +7,26 @@ Class Explosion Extends GameObject
 	Global img:Image[2]	
 	Global collisionRadius:Float
 	
-	Const ANIM_SPEED:Float = 1
+	Field ANIM_SPEED:Float[] = [.75, .5]
+	Const FRAMES:Int = 32
 	
 	Field frame:Float
 	Field typ:Int
 	
 	Function Init:Void()
 		If (img[0] = Null Or img[1] = Null)
-			img[0] = LoadImage("gfx/explosion3.png")
-			img[0] = img[0].GrabImage(0, 0, 128, 128, 64, Image.MidHandle)
-			img[1] = LoadImage("gfx/mushroom.png")
-			img[1] = img[1].GrabImage(0, 0, 128, 128, 64, Image.MidHandle)
+			img[0] = LoadImage("gfx/explosion3.png", 128, 128, FRAMES, Image.MidHandle)
+			img[1] = LoadImage("gfx/mushroom.png", 128, 128, FRAMES, Image.MidHandle)
 			collisionRadius = img[0].Width() * 0.25			
 		End			
 	End
+	
+	Function Discard:Void()
+		if (img[0] <> null) img[0].Discard()
+		if (img[1] <> null) img[1].Discard()
+		img[0] = null
+		img[1] = null
+	End Function
 	
 	Function Create:Explosion(x:Int, y:Int, typ:Int = 0)
 		Local e:Explosion
@@ -46,11 +52,11 @@ Class Explosion Extends GameObject
 	
 	Method OnUpdate:Void()
 		If (IsDestroyed()) Then Return
-		frame += ANIM_SPEED
+		frame += ANIM_SPEED[typ]
 	End
 	
 	Method IsDestroyed:Bool()
-		Return (frame >= 63)
+		Return (frame >= FRAMES)
 	End Method
 	
 	Method OnRender:Void()
@@ -59,7 +65,7 @@ Class Explosion Extends GameObject
 	End
 	
 	Method Destroy:Void()
-		frame = 63
+		frame = FRAMES
 	End
 End
 
