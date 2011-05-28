@@ -22,6 +22,13 @@ Class Explosion Extends GameObject
 		End			
 	End
 	
+	Function Discard:Void()
+		if (img[0] <> null) img[0].Discard()
+		if (img[1] <> null) img[1].Discard()
+		img[0] = null
+		img[1] = null
+	End Function
+	
 	Function Create:Explosion(x:Int, y:Int, typ:Int = 0)
 		Local e:Explosion
 

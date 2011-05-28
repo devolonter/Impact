@@ -43,10 +43,12 @@ Class SceneLogo Extends Scene
 	End
 	
 	Method OnLeave:Void()
+		if (logo <> null) logo.Discard()
 		logo = Null		
 		GameObject.list.Clear()
 	End
 End
+
 
 
 

@@ -19,6 +19,13 @@ Class Station Extends GameObject
 		End If
 	End
 	
+	Function Discard:Void()
+		if (img[0] <> null) img[0].Discard()
+		if (img[1] <> null) img[1].Discard()
+		img[0] = null
+		img[1] = null
+	End Function
+	
 	Method OnRender:Void()
 		DrawImage(img[type], x, y)
 	End

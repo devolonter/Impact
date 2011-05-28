@@ -29,6 +29,13 @@ Class Asteroid Extends GameObject
 		End
 	End
 	
+	Function Discard:Void()
+		if (img <> null) Then
+			img.Discard()
+			img = null
+		End
+	End Function
+	
 	Method OnUpdate:Void()
 		frame += ANIM_SPEED
 		If (frame >= FRAMES) Then frame -= FRAMES

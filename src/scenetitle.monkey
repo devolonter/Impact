@@ -50,6 +50,8 @@ Class SceneTitle Extends Scene
 	End
 	
 	Method OnLeave:Void()
+		titlepic.Discard()
+		titlepic = null
 	End
 End
 

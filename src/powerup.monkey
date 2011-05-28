@@ -28,6 +28,13 @@ Class PowerUp Extends GameObject
 		End
 	End
 	
+	Function Discard:Void()
+		if (img <> null) Then
+			img.Discard()
+			img = null
+		End
+	End Function
+	
 	Function Create:PowerUp(x:Float, y:Float, dx:Float, dy:Float)
 		Local p:PowerUp
 		For Local go:GameObject = Eachin list
