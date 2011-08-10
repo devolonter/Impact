@@ -1,4 +1,4 @@
-main.build/*
-Impact.jiproj
-Impact.jungle
+*.build
+*.jiproj
+*.jungle*
 publish/*
