@@ -31,7 +31,7 @@ Class Application Extends App
 	Field loading:Bool
 	
 	Method OnCreate:Int()
-		SetUpdateRate(60)
+		SetUpdateRate(58)
 		zoomFactorX = Float(DeviceWidth()) / Float(WIDTH)
 		zoomFactorY = Float(DeviceHeight()) / Float(HEIGHT)
 		Return 0

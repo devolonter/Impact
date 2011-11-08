@@ -54,6 +54,12 @@ Class SceneTitle Extends Scene
 		titlepic.Discard()
 		titlepic = null
 	End
+	
+	Method OnResume:Void()	
+	End Method
+		
+	Method OnSuspend:Void()	
+	End Method
 End
 
 

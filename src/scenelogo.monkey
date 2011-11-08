@@ -47,6 +47,13 @@ Class SceneLogo Extends Scene
 		logo = Null		
 		GameObject.list.Clear()
 	End
+	
+	Method OnResume:Void()	
+	End Method
+		
+	Method OnSuspend:Void()	
+	End Method
+	 
 End
 
 

@@ -253,6 +253,9 @@ Class SceneGame Extends Scene
 		Explosion.Create(-100,100)	
 		Explosion.Create(-100,-100,1)			
 	End Method
+	
+	Method OnResume:Void()	
+	End Method
 			
 End
 

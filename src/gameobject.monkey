@@ -7,7 +7,8 @@ Class GameObject Abstract
 	Field x:Float
 	Field y:Float
 
-	Function Init:Void() Abstract
+	Function Init:Void()	
+	End Function
 	
 	Method OnRender:Void() Abstract
 	Method OnUpdate:Void() Abstract
